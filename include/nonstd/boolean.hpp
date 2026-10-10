@@ -26,13 +26,11 @@
 
 // tweak header support:
 
-#ifdef __has_include
-# if __has_include(<nonstd/boolean.tweak.hpp>)
-#  include <nonstd/boolean.tweak.hpp>
-# endif
-#define boolean_HAVE_TWEAK_HEADER  1
+#if defined(__has_include) && __has_include(<nonstd/boolean.tweak.hpp>)
+# include <nonstd/boolean.tweak.hpp>
+# define boolean_HAVE_TWEAK_HEADER  1
 #else
-#define boolean_HAVE_TWEAK_HEADER  0
+# define boolean_HAVE_TWEAK_HEADER  0
 //# pragma message("boolean.hpp: Note: Tweak header not supported.")
 #endif
 
